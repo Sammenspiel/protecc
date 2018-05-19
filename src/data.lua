@@ -9,7 +9,7 @@ local Data = {}
 
 function Data.Mob(t)
   local t = t or {}
-  assert(type(t) == 'table', 'Function `sim.Mob` parameter must be a table!')
+  assert(type(t) == 'table', 'Function `Data.Mob` parameter must be a table!')
   return {
     x         = t.x         or 0,
     y         = t.y         or 0,
@@ -26,7 +26,7 @@ end
 
 function Data.Zone(t)
   local t = t or {}
-  assert(type(t) == 'table', 'Function `sim.Zone` parameter must be a table!')
+  assert(type(t) == 'table', 'Function `Data.Zone` parameter must be a table!')
   return {
     x    = t.x    or 0,
     y    = t.y    or 0,

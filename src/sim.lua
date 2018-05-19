@@ -6,19 +6,19 @@ local lume    = require 'lib/lume'
 
 -- Events
 
-function outsideZone(mob, zone)
+local outsideZone = function(mob, zone)
   return lume.distance(mob.x, mob.y, zone.x, zone.y) >= zone.size - mob.size
 end
 
-function touchMob(mob, other)
+local touchMob = function(mob, other)
   return lume.distance(mob.x, mob.y, other.x, other.y) <= mob.size + other.size
 end
 
-function spotMob(mob, other)
+local spotMob = function(mob, other)
   return lume.distance(mob.x, mob.y, other.x, other.y) <= mob.vision + other.size
 end
 
-function spotPrey(mob, mobList)
+local spotPrey = function(mob, mobList)
   for _, other in ipairs(mobList) do
     if spotMob(mob, other) and other.species == Species.PREY then
       return true
@@ -27,7 +27,7 @@ function spotPrey(mob, mobList)
   return false
 end
 
-function spotPredator(mob, mobList)
+local spotPredator = function(mob, mobList)
   for _, other in ipairs(mobList) do
     if spotMob(mob, other) and other.species == Species.PREDATOR then
       return true
@@ -36,7 +36,7 @@ function spotPredator(mob, mobList)
   return false
 end
 
-function tick(mob, dt)
+local tick = function(mob, dt)
   mob.timer = mob.timer + dt
   if mob.timer >= mob.tickTime then
     mob.timer = 0
