@@ -1,0 +1,13 @@
+Author: Samuel J Kriever
+
+Made with love2d v11.1 <https://love2d.org/>
+
+p r o t e c c - a game about protecting your little guys
+
+
+Right now does pretty much nothing, other than simulate wandering/hunting/fleeing
+
+
+White dots are "Prey"
+
+Red dot is "Predator"
